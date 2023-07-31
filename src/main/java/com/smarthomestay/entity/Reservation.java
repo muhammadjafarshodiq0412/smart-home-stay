@@ -19,7 +19,7 @@ public class Reservation extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "room")
     private Room room;
-    @OneToMany
+    @ManyToMany
     @JoinTable(name = "additional_facilities", joinColumns = @JoinColumn(name = "reservation"), inverseJoinColumns = @JoinColumn(name = "room_facility"))
     private List<RoomFacilities> roomFacilities;
     private Date checkInDate;
