@@ -26,4 +26,5 @@ public class Reservation extends BaseEntity{
     private Date checkOutDate;
     private int totalNight;
     private int totalPrice;
+    private String status;
 }

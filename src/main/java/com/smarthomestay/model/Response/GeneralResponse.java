@@ -17,4 +17,8 @@ public class GeneralResponse<E> {
         this.message = message;
         this.data = data;
     }
+
+    public GeneralResponse(int code) {
+        this.code = code;
+    }
 }
