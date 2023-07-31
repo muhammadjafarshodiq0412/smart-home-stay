@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Slf4j
 @Service
 public class CustomerServiceImpl {
@@ -26,7 +24,7 @@ public class CustomerServiceImpl {
     public GeneralResponse<Object> save(CustomerSaveRequest request) {
         log.info("Start process saving customer");
         try {
-            Customer customer = new Customer(request, GeneralConstant.STATUS_UNACTIVED);
+            Customer customer = new Customer(request, GeneralConstant.STATUS_ACTIVED);
             customer = customerRepository.save(customer);
             log.info("Success process saving customer");
             return new GeneralResponse<>(HttpStatus.OK.value(), "Success", "Success save data", customer);
